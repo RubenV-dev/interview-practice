@@ -36,6 +36,7 @@ class Node {
 }
 
 let arr = [6, 4, 2, 1, 3, 7, 6]
+
 let rootNode = new Node(arr[0])
 for (let i = 1; i < arr.length; i++){
     let currentValue = arr[i];
