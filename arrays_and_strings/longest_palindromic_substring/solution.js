@@ -39,6 +39,6 @@ let longestPalindrome = (s) => {
 
 }
 
-let test = "babad"
+let test = "abba"
 //Expected "aba"
 console.log(longestPalindrome(test))
