@@ -24,3 +24,25 @@ ON table1.column_name = table2.column_name;
 SELECT column_name(s)
 FROM table1 FULL OUTER JOIN table2
 ON table1.column_name = table2.column_name;
+
+//calculate total revenue per customer
+Select c.customerId, c.name, SUM(s.quantity * package.price) AS total_revenue
+FROM sales s
+JOIN products p ON s.productId = p.productId
+Join customers c ON s.customerId = c.customerId
+GROUP BY c.customerId, c.name
+
+SELECT Count(CustomerID), Country 
+FROM Customers 
+Group BY Country;
+
+SELECT COUNT(CustomerID), Country
+From Customers
+Group BY Country
+Order BY COUNT(CustomerID) DESC;
+
+//List the number of orders sent by each shipper
+
+SELECT Shippers.ShipperName, COUNT(Orders.OrderID) AS NumberOfOrders FROM Orders
+LEFT JOIN Shippers ON Orders.ShipperId = Shippers.ShipperId
+GROUP BY ShipperName
